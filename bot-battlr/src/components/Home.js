@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {bots && <BotCollection  bots={bots} title={"Bots"}/>}
+      {bots && <BotCollection  bots={bots} title={"Select your Bot Army"}/>}
     </div>
   );
 }

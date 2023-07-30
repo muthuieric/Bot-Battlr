@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BotCard from "./BotCard";
 import YourBotArmy from "./YourBotArmy";
 
-const BotCollection = ({ bots }) => {
+const BotCollection = ({ bots, title}) => {
   const [enlistedBots, setEnlistedBots] = useState([]);
 
   const handleEnlistBot = (bot) => {
@@ -32,12 +32,13 @@ const BotCollection = ({ bots }) => {
       <div className="bg-lime-400">
       <YourBotArmy enlistedBots={enlistedBots} onReleaseBot={handleReleaseBot} />
       </div>
-
+      <h2 className="font-bold text-4xl">{title}</h2>
       <div className=" flex flex-wrap flex-row ">
       {bots.map((bot) => (
         <BotCard key={bot.id} bot={bot} onEnlistBot={handleEnlistBot}
          onReleaseBot={handleReleaseBot}
-         onDischargeBot={handleDischargeBot}/>
+         onDischargeBot={handleDischargeBot}
+         />
       ))}
       </div>
     </div>
