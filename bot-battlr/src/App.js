@@ -1,10 +1,10 @@
 import React from "react";
-import BotsPage from "./components/BotsPage";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      <BotsPage />
+      <Home />
     </div>
   );
 }
