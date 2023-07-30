@@ -4,6 +4,7 @@ import BotCollection from "./BotCollection";
 const Home = () => {
   const [bots, setBots] = useState(null)
 
+
   useEffect(() => {
     fetch('http://localhost:8001/bots')
       .then(res =>  res.json())
@@ -14,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {bots && <BotCollection  bots={bots} title={"Bots Collection"}/>}
+      {bots && <BotCollection  bots={bots} title={"Bots"}/>}
     </div>
   );
 }
