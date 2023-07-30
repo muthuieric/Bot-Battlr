@@ -11,15 +11,33 @@ const BotCollection = ({ bots }) => {
     }
   };
 
+  const handleReleaseBot = (botId) => {
+    setEnlistedBots(enlistedBots.filter((bot) => bot.id !== botId));
+  };
+
+
+  const handleDischargeBot = (botId) => {
+    fetch(`http://localhost:8001/bots/${botId}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setEnlistedBots(enlistedBots.filter((bot) => bot.id !== botId));
+        }
+      });
+  };
   return (
     <div>
       <div className="bg-lime-400">
-      <YourBotArmy enlistedBots={enlistedBots} />
+      <YourBotArmy enlistedBots={enlistedBots} onReleaseBot={handleReleaseBot} />
       </div>
 
       <div className=" flex flex-wrap flex-row ">
       {bots.map((bot) => (
-        <BotCard key={bot.id} bot={bot} onEnlistBot={handleEnlistBot} />
+        <BotCard key={bot.id} bot={bot} onEnlistBot={handleEnlistBot}
+         onReleaseBot={handleReleaseBot}
+         onDischargeBot={handleDischargeBot}/>
       ))}
       </div>
     </div>
