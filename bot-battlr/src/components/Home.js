@@ -6,7 +6,7 @@ const Home = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:8001/bots')
+    fetch('https://bot-battlr-bejy.onrender.com/bots')
       .then(res =>  res.json())
       .then(data => {
         setBots(data);

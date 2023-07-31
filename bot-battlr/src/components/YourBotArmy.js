@@ -7,7 +7,7 @@ const YourBotArmy = ({ enlistedBots, onReleaseBot, onDischargeBot }) => {
 
   const handleDischargeClick = (bot) => {
    
-    fetch(`http://localhost:8001/bots/${bot.id}`, {
+    fetch(`https://bot-battlr-bejy.onrender.com/bots/${bot.id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

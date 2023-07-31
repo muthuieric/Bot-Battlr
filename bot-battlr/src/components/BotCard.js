@@ -3,7 +3,7 @@ import React from "react";
 const BotCard = ({ bot, onEnlistBot }) => {
 
   return (
-    <div  className="mt-8 bg-white rounded w-80 m-2 border-2 flex flex-col overflow-hidden shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105"
+    <div  className="mt-8 bg-white rounded w-60 m-2 border-2 flex flex-col  overflow-hidden shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105"
      onClick={()=> onEnlistBot(bot)}>
       <img className="bg-gray-300 w-full h-32 sm:h-48 object-cover rounded-t" src={bot.avatar_url} alt={bot.name} />
       <div className="p-4">
