@@ -1,5 +1,9 @@
 # Bot Battlr
 
+## Live Server
+https://bot-battlr-002.netlify.app/
+
+
 ## Learning Goals
 Implement a mini web app to practice components, props, state, events, and data fetching in react
  
